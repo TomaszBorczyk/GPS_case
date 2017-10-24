@@ -7,7 +7,7 @@ h_inner = 35;
 t_wall = 1.5;
 t_base = 1.5;
 
-hole_corners_r = 2;
+hole_corners_r = 1.9;
 hole_corners_border_r = hole_corners_r + 0.5;
 hole_corners_border_t = 0.2;
 
