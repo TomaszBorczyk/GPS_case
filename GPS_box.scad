@@ -2,7 +2,7 @@ $fn=50;
 xxx = 0.01;
 
 l_inner = 65;
-w_inner = 32;
+w_inner = 33;
 h_inner = 2*22;
 t_wall = 1.5;
 t_base = 1.5;
@@ -86,7 +86,15 @@ difference(){
     //hole for USB
     translate([l_inner/2 + 3, 0, -3 + xxx])
     cube([5, 12, 9], center=true);
+
+    //hole for button
+    translate([20, -18, -3*t_base-3])
+    rotate([90, 0, 0])
+    linear_extrude(5)
+    circle(2, center=true);
 }
+
+
 
 
 
@@ -95,7 +103,7 @@ translate([0, 50, 0]){
 
     difference(){
         minkowski(){
-            cube([l_outer, w_outer, h_outer], center=true);
+            cube([l_outer, w_outer, h_outer+collision_margin], center=true);
             sphere(outer_curve);
         }
 
@@ -145,4 +153,7 @@ translate([0, 50, 0]){
 
       
 }
+
+rotate([0, 30, 0])
+    cube([10, 20, 30], center=true);
 
